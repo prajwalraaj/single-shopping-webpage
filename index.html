@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shopping | Home Page</title>
   <style>
     body {
@@ -13,30 +13,59 @@
       color: #333;
     }
 
-    h1 {
-      color: #0a84ae;
-      font-size: 45px;
-      margin-left: 4em;
-      margin-top: 20px;
+    /* Header */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #0a84ae;
+      color: white;
+      padding: 15px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
+    .navbar h1 {
+      font-size: 28px;
+      margin: 0;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-buttons a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      background-color: #1c96c5;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .nav-buttons a:hover {
+      background-color: #0b5e7c;
+    }
+
+    /* Product Area */
     table {
-      margin-left: 5em;
-      margin-top: 20px;
+      margin: 40px auto;
     }
 
     td {
-      padding: 10px;
+      padding: 15px;
       vertical-align: top;
     }
 
-    p {
-      font-size: 18px;
-      line-height: 1.5;
-    }
-
-    .gallery {
-      margin-top: 10px;
+    .preview img {
+      border: 1px solid #888;
+      padding: 4px;
+      border-radius: 10px;
+      width: 500px;
+      height: 250px;
     }
 
     .thumbnails img {
@@ -49,18 +78,41 @@
 
     .thumbnails img:hover {
       border-color: #00ccff;
-      cursor: pointer;
       transform: scale(1.05);
+      cursor: pointer;
     }
 
-    .preview img {
-      border: 1px solid #888;
-      padding: 4px;
-      border-radius: 10px;
-      width: 500px;
-      height: 250px;
+    h2 {
+      color: #0a84ae;
+      margin-bottom: 0;
     }
 
+    p {
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .product-buttons {
+      margin-top: 15px;
+    }
+
+    .product-buttons button {
+      padding: 10px 18px;
+      margin-right: 10px;
+      font-size: 16px;
+      background-color: #1c96c5;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .product-buttons button:hover {
+      background-color: #0b5e7c;
+    }
+
+    /* Info Box */
     #p2 {
       margin: 30px auto;
       width: 80%;
@@ -80,42 +132,34 @@
     #p2 td:last-child {
       border-right: none;
     }
-
-    .action-buttons input[type="image"] {
-      margin-right: 10px;
-      margin-top: 10px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .action-buttons input[type="image"]:hover {
-      transform: scale(1.05);
-    }
-
-    h6 {
-      font-weight: normal;
-      font-size: 14px;
-      margin: 5px 0;
-    }
   </style>
 </head>
 
 <body>
-  <h1>Shopping Website</h1>
+  <!-- Top Nav Bar -->
+  <div class="navbar">
+    <h1>🛒 Shopping Website</h1>
+    <div class="nav-buttons">
+      <a href="#">Home</a>
+      <a href="#">Login</a>
+      <a href="#">🛍️ Cart</a>
+    </div>
+  </div>
 
+  <!-- Product Section -->
   <table>
     <tr>
       <td rowspan="2">
         <div class="preview" align="left">
           <img name="preview" src="img/sofa.png" alt="sofa" />
-        </div><br/>
+        </div><br />
         <div class="gallery" align="left">
           <div class="thumbnails">
-            <img onmouseover="preview.src=sofa.src" name="sofa" src="img/sofa.png" alt="sofa"/>
-            <img onmouseover="preview.src=sofa1.src" name="sofa1" src="img/sofa1.jpg" alt="sofa1"/>
-            <img onmouseover="preview.src=sofa2.src" name="sofa2" src="img/sofa2.jpg" alt="sofa2"/>
-            <img onmouseover="preview.src=sofa3.src" name="sofa3" src="img/sofa3.jpg" alt="sofa3"/>
-            <img onmouseover="preview.src=sofa4.src" name="sofa4" src="img/sofa4.jpg" alt="sofa4"/>
+            <img onmouseover="preview.src=sofa.src" name="sofa" src="img/sofa.png" alt="sofa" />
+            <img onmouseover="preview.src=sofa1.src" name="sofa1" src="img/sofa1.jpg" alt="sofa1" />
+            <img onmouseover="preview.src=sofa2.src" name="sofa2" src="img/sofa2.jpg" alt="sofa2" />
+            <img onmouseover="preview.src=sofa3.src" name="sofa3" src="img/sofa3.jpg" alt="sofa3" />
+            <img onmouseover="preview.src=sofa4.src" name="sofa4" src="img/sofa4.jpg" alt="sofa4" />
           </div>
         </div>
       </td>
@@ -123,26 +167,26 @@
     </tr>
     <tr>
       <td>
-        <p><strong>Kyara Upholstered standard bed<br/> by Ziocode Design</strong></p>
+        <p><strong>Kyara Upholstered Standard Bed<br />by Ziocode Design</strong></p>
         <p>Anchor your living room in a sophisticated style and impeccable comfort with a single addition. Perfectly balancing wood accents with fabric upholstery.</p>
-        <h6 style="color:green">Rating : ★★★★★<br/>(5.0) review based on 250 people</h6>
-        <p style="font-size:20px;"><strong>Price : $567</strong></p>
+        <h6 style="color:green">Rating: ★★★★★ (5.0) based on 250 reviews</h6>
+        <p><strong>Price: $567</strong></p>
         <h6>⏰ Dispatched in 7 working days.</h6>
-        <div class="action-buttons">
-          <input type="image" src="img/add.png" width="130" height="35" alt="add to cart" />
-          <input type="image" src="img/wishlist.png" width="130" height="35" alt="wishlist" />
+        <div class="product-buttons">
+          <button>Add to Cart</button>
+          <button>Add to Wishlist</button>
         </div>
       </td>
     </tr>
   </table>
 
+  <!-- Info Row -->
   <table id="p2">
     <tr>
-      <td><strong>Secure Payment</strong><br/>Your money is in secure places.</td>
-      <td><strong>Fast & Free Delivery</strong><br/>Home delivery $15. Free on orders over $250.</td>
-      <td><strong>Return Policy</strong><br/>No hassle return policy.</td>
+      <td><strong>Secure Payment</strong><br />Your money is in safe hands.</td>
+      <td><strong>Fast & Free Delivery</strong><br />Home delivery is $15 or FREE for orders over $250.</td>
+      <td><strong>Return Policy</strong><br />No-hassle return policy for easy refunds.</td>
     </tr>
   </table>
 </body>
 </html>
-
